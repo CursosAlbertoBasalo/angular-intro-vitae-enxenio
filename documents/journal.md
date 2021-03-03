@@ -25,8 +25,15 @@ ng g m domain/not-found --route=not-found -m app-routing.module.ts
 ng g m domain/search --route=search
 ng g m domain/categories --route=categories
 
-ng g m domain/categories/new --route=categories/new
-ng g m domain/categories/new --route=categories-new
-ng g m domain/categories-new --route=categories-new
+ng g m domain/categories-new --route=categories/new -m app-routing
 
+# plana
+ng g m domain/categories-new --route=categories-new -m app-routing
+
+# inconguente
+ng g m domain/categories/new --route=categories/new -m app-routing
+
+# congruente jerarquía pero potencialmente más costosa
+ng g m domain/categories/new --route=new -m categories-routing
+ng g m domain/categories/view --route=:id -m categories-routing
 ```
