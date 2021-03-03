@@ -130,6 +130,9 @@
     },
     "@schematics/angular:service": {
       "skipTests": true
+    },
+    "@schematics/angular:module": {
+      "module": "app-routing.module.ts"
     }
   },
   "defaultProject": "angular-intro-vitae-enxenio"

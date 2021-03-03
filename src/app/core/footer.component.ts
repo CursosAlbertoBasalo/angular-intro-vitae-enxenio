@@ -7,6 +7,7 @@ import { FooterService } from './footer.service';
     <footer>
       <ab-author></ab-author>
       CopyRight {{ year }}
+      <a routerLink="about">About us</a>
     </footer>
   `,
   styles: [],
