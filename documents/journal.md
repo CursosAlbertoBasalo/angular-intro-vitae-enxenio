@@ -20,5 +20,13 @@ ng g s core/footer
 ng g m home --route=home -m app-routing.module.ts
 ng g m about --route=about -m app-routing.module.ts
 ng g m domain/not-found --route=not-found -m app-routing.module.ts
-ng g m search --route=search
+
+
+ng g m domain/search --route=search
+ng g m domain/categories --route=categories
+
+ng g m domain/categories/new --route=categories/new
+ng g m domain/categories/new --route=categories-new
+ng g m domain/categories-new --route=categories-new
+
 ```
