@@ -15,7 +15,10 @@ const routes: Routes = [
     loadChildren: () => import('./domain/not-found/not-found.module').then((m) => m.NotFoundModule),
   },
   { path: 'search', loadChildren: () => import('./domain/search/search.module').then((m) => m.SearchModule) },
-  { path: 'categories', loadChildren: () => import('./domain/categories/categories.module').then(m => m.CategoriesModule) },
+  {
+    path: 'categories',
+    loadChildren: () => import('./domain/categories/categories.module').then((m) => m.CategoriesModule),
+  },
   {
     path: '**',
     redirectTo: 'not-found',
