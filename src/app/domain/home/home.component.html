@@ -4,4 +4,5 @@
     {{ category.name }}
   </li>
 </ul>
-<span *ngIf="categories.length<=0"> No categories yet.... </span>
+<span *ngIf="categories?.length <= 0"> No categories yet.... </span>
+<span *ngIf="errorMessage"> ⚠ {{ errorMessage }} </span>

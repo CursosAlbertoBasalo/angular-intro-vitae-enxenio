@@ -9,10 +9,23 @@ import { HomeService } from './home.service';
 })
 export class HomeComponent implements OnInit {
   categories: Category[];
+  errorMessage: string;
+  private service: HomeService;
 
   constructor(service: HomeService) {
-    this.categories = service.getCategories();
+    this.service = service;
+    //this.categories = service.getCategories();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.service.getCategories$().subscribe(
+    //   (result) => (this.categories = result),
+    //   (error) => console.log(error)
+    // );
+
+    this.service.getCategories$().subscribe({
+      next: (result) => (this.categories = result),
+      error: (error) => (this.errorMessage = error.message),
+    });
+  }
 }
