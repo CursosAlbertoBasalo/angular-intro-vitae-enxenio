@@ -1,0 +1,32 @@
+<h2 [ngClass]="getCategoriesTitleClass() ">{{ titles[0] | uppercase }}</h2>
+<ul>
+  <li *ngFor="let category of categories">
+    {{ category.name }}
+  </li>
+</ul>
+<span *ngIf="categories.length<=0"> No categories yet.... </span>
+<h2 [ngClass]="getItemsTitleClass()">{{ titles[1] | uppercase }}</h2>
+<ul *ngIf="items.length>0 ; else noData">
+  <li *ngFor="let item of items">
+    {{ item.name }}
+  </li>
+</ul>
+<ng-template #noData> No data yet </ng-template>
+<button (click)=" items.push({name:'Hola'}) "> Add Item </button>
+<button (click)=" items=[] "> Clear </button>
+<form action="">
+  <label for="company"> Company: </label>
+  <input
+         name="company"
+         [value]="company"
+         (change)="setCompany($event.target.value)">
+  <label for="city"> City: </label>
+  <input
+         name="city"
+         [(ngModel)]="city">
+</form>
+<pre>
+  {{ company  }} - {{ city }}
+</pre>
+<!-- <span *ngIf="items.length<=0"> No items yet.... </span>
+<span [hidden]="items.length > 0"> El hidden </span> -->
