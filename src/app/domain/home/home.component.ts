@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from 'src/app/core/models/category';
+import { HomeService } from './home.service';
 
 @Component({
   selector: 'ab-home',
@@ -6,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styles: [],
 })
 export class HomeComponent implements OnInit {
-  categories = [{ name: 'Libraries' }, { name: 'Courses' }];
+  categories: Category[];
 
-  constructor() {}
+  constructor(service: HomeService) {
+    this.categories = service.getCategories();
+  }
 
   ngOnInit(): void {}
 }
