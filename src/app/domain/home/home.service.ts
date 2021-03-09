@@ -11,6 +11,7 @@ export class HomeService {
 
   getCategories$() {
     const url = 'https://angularbuilders-pre.herokuapp.com/api/v1/categories';
+
     type ApiCategories = {
       data: Category[];
     };
