@@ -1,21 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { Category } from 'src/app/core/models/category';
+import { ApiCategories } from 'src/app/core/models/category';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HomeService {
+  private endPoint = environment.apiUrl + '/categories';
+
   constructor(private http: HttpClient) {}
 
   getCategories$() {
-    const url = 'https://angularbuilders-pre.herokuapp.com/api/v1/categories';
-
-    type ApiCategories = {
-      data: Category[];
-    };
-
+    const url = this.endPoint;
     return this.http.get<ApiCategories>(url).pipe(map((response) => response.data));
   }
 

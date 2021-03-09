@@ -1,8 +1,18 @@
-<article>
+<article *ngIf="category">
   <header>
     <h3>{{category.name}}</h3>
   </header>
   <main>
     {{ category.description }}
+  </main>
+</article>
+<hr>
+<article *ngFor="let item of items">
+  <header>
+    <h3><a
+         [routerLink]="[ '/','items', item.id]">{{item.name}}</a></h3>
+  </header>
+  <main>
+    {{ item.description }}
   </main>
 </article>
