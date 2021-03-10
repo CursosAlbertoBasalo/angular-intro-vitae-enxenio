@@ -23,6 +23,10 @@ const routes: Routes = [
     loadChildren: () => import('./domain/categories/categories.module').then((m) => m.CategoriesModule),
   },
   {
+    path: 'items',
+    loadChildren: () => import('./domain/items/items.module').then((m) => m.ItemsModule),
+  },
+  {
     path: '**',
     redirectTo: 'not-found',
   },

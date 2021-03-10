@@ -37,3 +37,8 @@ ng g m domain/categories/new --route=categories/new -m app-routing
 ng g m domain/categories/new --route=new -m categories-routing
 ng g m domain/categories/view --route=:id -m categories-routing
 ```
+
+```
+ ng g m domain/items -m=app-routing --route=items --routing
+ ng g m domain/items/view --route=:id -m items-routing
+```
