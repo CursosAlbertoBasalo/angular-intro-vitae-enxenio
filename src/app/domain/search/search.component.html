@@ -1,1 +1,7 @@
-<h2>Categories</h2>
+<h2>Searching for resources</h2>
+<form (ngSubmit)="search()">
+  <input type="search" placeholder="Type your search term..." name="searchTerm"
+         [(ngModel)]="searchTerm">
+  <button type="submit">Search</button>
+</form>
+<pre>{{ items | json }}</pre>
