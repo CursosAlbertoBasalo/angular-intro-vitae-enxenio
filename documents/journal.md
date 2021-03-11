@@ -30,15 +30,24 @@ ng g m domain/categories-new --route=categories/new -m app-routing
 # plana
 ng g m domain/categories-new --route=categories-new -m app-routing
 
-# inconguente
+# incongruente
 ng g m domain/categories/new --route=categories/new -m app-routing
 
-# congruente jerarquía pero potencialmente más costosa
+# congruente jerarquía pero menos visible de inicio
 ng g m domain/categories/new --route=new -m categories-routing
 ng g m domain/categories/view --route=:id -m categories-routing
 ```
 
+#7
+
 ```
  ng g m domain/items -m=app-routing --route=items --routing
  ng g m domain/items/view --route=:id -m items-routing
+```
+
+#8
+
+```
+ ng g m domain/items/new --route=new -m items-routing
+ ng g s domain/items/new
 ```

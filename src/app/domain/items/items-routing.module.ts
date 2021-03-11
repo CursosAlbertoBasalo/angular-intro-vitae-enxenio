@@ -4,6 +4,7 @@ import { ItemsComponent } from './items.component';
 
 const routes: Routes = [
   { path: '', component: ItemsComponent },
+  { path: 'new', loadChildren: () => import('./new/new.module').then((m) => m.NewModule) },
   { path: ':id', loadChildren: () => import('./view/view.module').then((m) => m.ViewModule) },
 ];
 
