@@ -16,6 +16,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.searchTerm = this.route.snapshot.queryParams.term;
+    this.search();
   }
 
   search() {

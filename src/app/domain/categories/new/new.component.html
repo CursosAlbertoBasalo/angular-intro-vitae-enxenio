@@ -1,1 +1,23 @@
-<p>new works!</p>
+<form #f="ngForm" (ngSubmit)="save()" novalidate>
+  <fieldset>
+    <div>
+      <label for="name">Name of the category</label>
+      <input name="name" #nameModel="ngModel"
+             type="text" required minlength="2" maxlength="30"
+             [(ngModel)]="category.name">
+      <span *ngIf="mustShowErrors(nameModel)">
+        <span> {{ isRequired(nameModel)}} {{isBetween(nameModel,2,30)}} </span>
+      </span>
+    </div>
+    <div>
+      <label for="description">Brief description</label>
+      <input name="description" #descriptionModel="ngModel"
+             type="text" required
+             [(ngModel)]="category.description">
+      <span *ngIf="mustShowErrors(descriptionModel)">
+        <span> {{ isRequired(descriptionModel)}} </span>
+      </span>
+    </div>
+  </fieldset>
+  <button type="submit" [disabled]="f.invalid"> Save new category</button>
+</form>
