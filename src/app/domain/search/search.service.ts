@@ -13,18 +13,20 @@ export class SearchService {
 
   getItemsBySearchTerm$(searchTerm: string) {
     const url = this.endPoint;
+    const term = searchTerm.toLocaleLowerCase();
     return this.http.get<ApiItems>(url).pipe(
       map((response) => response.data),
-      map((items) => this.filterBySearchTerm(items, searchTerm))
+      map((items) => this.filterBySearchTerm(items, term))
     );
   }
 
-  private filterBySearchTerm(items: Item[], searchTerm: string) {
-    return items.filter((item) => this.bySearchTerm(item, searchTerm));
+  private filterBySearchTerm(items: Item[], term: string) {
+    return items.filter((item) => this.byTerm(item, term));
   }
 
-  private bySearchTerm(item: Item, searchTerm: string) {
-    const term = searchTerm.trim().toLowerCase();
-    return item.name.toLowerCase().includes(term) || item.description.toLowerCase().includes(term);
+  private byTerm(item: any, term: string) {
+    if (item.name.toLocaleLowerCase().includes(term)) return true;
+    if (item.description?.toLocaleLowerCase().includes(term)) return true;
+    return false;
   }
 }
