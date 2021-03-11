@@ -1,1 +1,40 @@
-<p>new works!</p>
+<form #f="ngForm" (ngSubmit)="save()" novalidate *ngIf=" (categories$ | async) as categories">
+  <fieldset>
+    <div>
+      <label for="categoryId">Category of the item</label>
+      <select name="categoryId" [(ngModel)]="item.categoryId" required>
+        <option disabled value=""> Choose a category</option>
+        <option *ngFor="let category of categories" [value]="category.id">
+          {{ category.name }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <label for="name">Name of the item</label>
+      <input name="name" #nameModel="ngModel"
+             type="text" required minlength="2" maxlength="30"
+             [(ngModel)]="item.name">
+      <span *ngIf="mustShowErrors(nameModel)">
+        <span> {{ isRequired(nameModel)}} {{isBetween(nameModel,2,30)}} </span>
+      </span>
+    </div>
+    <div>
+      <label for="description">Brief description</label>
+      <input name="description" #descriptionModel="ngModel"
+             type="text" required
+             [(ngModel)]="item.description">
+      <span *ngIf="mustShowErrors(descriptionModel)">
+        <span> {{ isRequired(descriptionModel)}} </span>
+      </span>
+    </div>
+    <div>
+      <label for="price">Resource price</label>
+      <input name="price" #priceModel="ngModel"
+             type="number" min="0" max="9"
+             [(ngModel)]="item.price">
+    </div>
+  </fieldset>
+  <button type="submit" [disabled]="f.invalid"> Save new item</button>
+</form>
+<div *ngIf="errorMessage"> 🔥 {{ errorMessage }}
+</div>

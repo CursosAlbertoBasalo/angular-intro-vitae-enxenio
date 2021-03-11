@@ -1,16 +1,53 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
+import { Item } from 'src/app/core/models/item';
+import { NewService } from './new.service';
 
 @Component({
   selector: 'ab-new',
   templateUrl: './new.component.html',
   styles: [],
 })
-export class NewComponent implements OnInit {
-  constructor() {}
+export class NewComponent {
+  categories$: Observable<any[]>;
+  errorMessage = '';
 
-  ngOnInit(): void {}
+  item: Item = {
+    id: '',
+    name: '',
+    description: '',
+    price: 0,
+    categoryId: '',
+  };
 
-  //   categoryId: "libraries"
+  constructor(private service: NewService) {
+    this.categories$ = service.getCategories$().pipe(
+      tap({
+        error: (err) => (this.errorMessage = err.message),
+      })
+    );
+  }
+
+  save() {
+    console.log('saving ' + JSON.stringify(this.item));
+    this.service.postNewItem$(this.item).subscribe({
+      error: (err) => (this.errorMessage = err.message),
+    });
+  }
+
+  mustShowErrors(controlModel) {
+    return controlModel.invalid && controlModel.touched;
+  }
+
+  isRequired(controlModel) {
+    return controlModel.errors.required ? 'Required' : '';
+  }
+  isBetween(controlModel, min, max) {
+    return controlModel.errors.minlength || controlModel.errors.maxlength ? `Length between ${min} and ${max}` : '';
+  }
+
+  // categoryId: "libraries"
   // course: {date: "", teacher: ""}
   // description: "Angular directives for displaying validation errors"
   // event: {date: "", location: ""}

@@ -9,8 +9,15 @@ import { environment } from 'src/environments/environment';
 })
 export class NewService {
   private endPoint = environment.apiUrl + '/items/';
+
   constructor(private http: HttpClient) {}
-  postNewCategory$(item: Item) {
+
+  getCategories$() {
+    const url = environment.apiUrl + '/categories/';
+    return this.http.get(url).pipe(map((response) => response['data']));
+  }
+
+  postNewItem$(item: Item) {
     return this.http.post<ApiItem>(this.endPoint, item).pipe(map((response) => response.data));
   }
 }
