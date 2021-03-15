@@ -3,19 +3,22 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { AuthService } from './auth.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private auth: AuthService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    const sessionToken = 'kk de la vaca';
+    const sessionToken = this.auth.getSessionToken();
 
-    request = request.clone({
-      setHeaders: {
-        Authorization: sessionToken,
-      },
-    });
+    if (sessionToken) {
+      request = request.clone({
+        setHeaders: {
+          Authorization: 'Bearer ' + sessionToken,
+        },
+      });
+    }
 
     return next.handle(request).pipe(
       catchError((err: HttpErrorResponse) => {
