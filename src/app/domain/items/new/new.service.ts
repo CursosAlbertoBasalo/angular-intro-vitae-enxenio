@@ -4,9 +4,7 @@ import { map } from 'rxjs/operators';
 import { ApiItem, Item } from 'src/app/core/models/item';
 import { environment } from 'src/environments/environment';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class NewService {
   private endPoint = environment.apiUrl + '/items/';
 

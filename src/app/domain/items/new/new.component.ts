@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Item } from 'src/app/core/models/item';
@@ -21,7 +22,7 @@ export class NewComponent {
     categoryId: '',
   };
 
-  constructor(private service: NewService) {
+  constructor(private service: NewService, private router: Router) {
     this.categories$ = service.getCategories$().pipe(
       tap({
         error: (err) => (this.errorMessage = err.message),
