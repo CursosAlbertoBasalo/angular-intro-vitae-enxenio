@@ -51,3 +51,10 @@ ng g m domain/categories/view --route=:id -m categories-routing
  ng g m domain/items/new --route=new -m items-routing
  ng g s domain/items/new
 ```
+
+#9
+
+```
+ng g m domain/login --route=login
+ng g m domain/activate --route=activate
+```

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FooterService } from './footer.service';
+import { FooterService } from '../data/footer.service';
 
 @Component({
   selector: 'ab-footer',

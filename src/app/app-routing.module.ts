@@ -27,6 +27,15 @@ const routes: Routes = [
     loadChildren: () => import('./domain/items/items.module').then((m) => m.ItemsModule),
   },
   {
+    path: 'login',
+    loadChildren: () => import('./domain/login/login.module').then((m) => m.LoginModule),
+  },
+
+  {
+    path: 'activate',
+    loadChildren: () => import('./domain/activate/activate.module').then((m) => m.ActivateModule),
+  },
+  {
     path: '**',
     redirectTo: 'not-found',
   },
