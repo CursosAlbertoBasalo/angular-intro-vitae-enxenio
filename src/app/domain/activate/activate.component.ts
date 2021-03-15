@@ -1,16 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivateService } from './activate.service';
 
 @Component({
   selector: 'ab-activate',
   templateUrl: './activate.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class ActivateComponent implements OnInit {
+  uat = '';
 
-  constructor() { }
+  constructor(private service: ActivateService) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  onSend() {
+    this.service.putActivation$(this.uat).subscribe({
+      next: (data) => console.log(data),
+    });
   }
-
 }
