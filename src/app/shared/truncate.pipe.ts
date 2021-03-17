@@ -2,6 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'truncate',
+  pure: true,
 })
 export class TruncatePipe implements PipeTransform {
   transform(value: unknown, ...args: unknown[]): unknown {

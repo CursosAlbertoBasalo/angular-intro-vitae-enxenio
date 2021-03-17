@@ -11,15 +11,17 @@ import { ViewService } from './view.service';
 export class ViewComponent implements OnInit {
   item: Item;
 
-  constructor(private route: ActivatedRoute, private service: ViewService) {}
+  constructor(private route: ActivatedRoute, private service: ViewService) {
+    this.item = route.snapshot.data.item;
+  }
 
   ngOnInit(): void {
-    this.getDataFromParameter();
+    //this.getDataFromParameter();
   }
 
-  private getDataFromParameter() {
-    this.service.getItem$(this.route.snapshot.params.id).subscribe({
-      next: (data) => (this.item = data),
-    });
-  }
+  // private getDataFromParameter() {
+  //   this.service.getItem$(this.route.snapshot.params.id).subscribe({
+  //     next: (data) => (this.item = data),
+  //   });
+  // }
 }
