@@ -4,3 +4,6 @@
 </main>
 <hr>
 <ab-footer></ab-footer>
+<hr>
+<button *ngIf="shouldInstall()" (click)="installPWA()">Install as an application</button>
+<button *ngIf="updateAvailable" (click)="reload()">Update available. Click to refresh</button>

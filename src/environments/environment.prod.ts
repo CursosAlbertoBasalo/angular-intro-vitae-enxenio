@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://angular.builders/api/v1',
+  apiUrl: 'https://angularbuilders-pre.herokuapp.com/api/v1',
 };
