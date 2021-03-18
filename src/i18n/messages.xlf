@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="installApp" datatype="html">
+        <source>Install as an application</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="updateAvilable" datatype="html">
+        <source>Update available. Click to refresh</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">10,11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8359660888243306571" datatype="html">
+        <source>Main menu</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/ui/header/header.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="mainTitle" datatype="html">
+        <source> Angular catalog </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/ui/header/header.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="navSearch" datatype="html">
+        <source>Search</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/ui/header/header.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="navCategories" datatype="html">
+        <source>Categories</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/ui/header/header.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="navNewCategory" datatype="html">
+        <source>New Category</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/ui/header/header.component.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="navNewItem" datatype="html">
+        <source>New Item</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/ui/header/header.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="navLogIn" datatype="html">
+        <source>Login</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/ui/header/header.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="emailPlaceholder" datatype="html">
+        <source>Your email address</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/domain/login/login.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="sendCredentials" datatype="html">
+        <source>Send </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/domain/login/login.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4772183007264721966" datatype="html">
+        <source>Mouse Over</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/track.directive.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8437063342841991199" datatype="html">
+        <source>Click</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/track.directive.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

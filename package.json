@@ -4,12 +4,17 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
-    "build:prod": "ng build --prod",
-    "start:pwa": "http-server -p 8082 -o -c-1 dist/angular-intro-vitae-enxenio",
+    "build:prod": "ng build --prod --localize",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "int:extract": "ng xi18n --output-path src/i18n",
+    "build:es": "ng build --configuration=es",
+    "start:es": "npm start -- --configuration=es --port 4202",
+    "start:es": "npm start -- --configuration=es --port 4202",
+    "serve": "http-server -p 8082 -o /en-US -c-1 dist/angular-intro-vitae-enxenio",
+    "serve:es": "http-server -p 8083 -o /es -c-1 dist/angular-intro-vitae-enxenio"
   },
   "private": true,
   "dependencies": {
@@ -30,6 +35,7 @@
     "@angular-devkit/build-angular": "~0.1102.2",
     "@angular/cli": "~11.2.2",
     "@angular/compiler-cli": "~11.2.3",
+    "@angular/localize": "^11.2.6",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",

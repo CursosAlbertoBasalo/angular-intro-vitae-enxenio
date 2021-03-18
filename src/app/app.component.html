@@ -5,5 +5,7 @@
 <hr>
 <ab-footer></ab-footer>
 <hr>
-<button *ngIf="shouldInstall()" (click)="installPWA()">Install as an application</button>
-<button *ngIf="updateAvailable" (click)="reload()">Update available. Click to refresh</button>
+<button *ngIf="shouldInstall()" (click)="installPWA()" i18n="@@installApp">Install as an
+  application</button>
+<button *ngIf="updateAvailable" (click)="reload()" i18n="@@updateAvilable">Update available. Click
+  to refresh</button>

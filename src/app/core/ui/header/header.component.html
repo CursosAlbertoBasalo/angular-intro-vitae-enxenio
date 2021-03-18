@@ -1,10 +1,11 @@
 <header>
-  <h1 abTrack="Menú principal" routerLink="/"> Angular catalog </h1>
+  <h1 abTrack="Main menu" i18n-abTrack routerLink="/" i18n="@@mainTitle"> Angular catalog </h1>
   <nav>
-    <a abTrack id="SEARCH" routerLink="search">Search</a>
-    <a abTrack routerLink="categories">Categories</a>
-    <a abTrack *ngIf="isLoggedIn" routerLink="categories/new">New Category</a>
-    <a abTrack *ngIf="isLoggedIn" routerLink="items/new">New Item</a>
-    <a abTrack id="LogIn" *ngIf="!isLoggedIn" routerLink="login">Login</a>
+    <a abTrack id="SEARCH" routerLink="search" i18n="@@navSearch">Search</a>
+    <a abTrack routerLink="categories" i18n="@@navCategories">Categories</a>
+    <a abTrack *ngIf="isLoggedIn" routerLink="categories/new" i18n="@@navNewCategory">New
+      Category</a>
+    <a abTrack *ngIf="isLoggedIn" routerLink="items/new" i18n="@@navNewItem">New Item</a>
+    <a abTrack id="LogIn" *ngIf="!isLoggedIn" routerLink="login" i18n="@@navLogIn">Login</a>
   </nav>
 </header>
