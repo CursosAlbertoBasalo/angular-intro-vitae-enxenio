@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/core/models/category';
 import { HomeService } from './home.service';
 
@@ -11,13 +11,14 @@ import { HomeService } from './home.service';
 export class HomeComponent implements OnInit, OnDestroy {
   categories: Category[];
   errorMessage: string;
-  private service: HomeService;
+  // private service: HomeService;
 
-  private subscription: Subscription;
+  // private subscription: Subscription;
 
-  constructor(service: HomeService) {
-    this.service = service;
+  constructor(service: HomeService, route: ActivatedRoute) {
+    // this.service = service;
     //this.categories = service.getCategories();
+    this.categories = route.snapshot.data.categories;
   }
 
   ngOnInit(): void {
@@ -25,14 +26,13 @@ export class HomeComponent implements OnInit, OnDestroy {
     //   (result) => (this.categories = result),
     //   (error) => console.log(error)
     // );
-
-    this.subscription = this.service.getCategories$().subscribe({
-      next: (result) => (this.categories = result),
-      error: (error) => (this.errorMessage = error.message),
-    });
+    // this.subscription = this.service.getCategories$().subscribe({
+    //   next: (result) => (this.categories = result),
+    //   error: (error) => (this.errorMessage = error.message),
+    // });
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    //this.subscription.unsubscribe();
   }
 }

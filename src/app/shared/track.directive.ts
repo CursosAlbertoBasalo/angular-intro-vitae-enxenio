@@ -10,12 +10,12 @@ export class TrackDirective {
 
   @HostListener('mouseover')
   onMouseOver() {
-    this.trackIntereaction('Mouse Over');
+    this.trackIntereaction($localize`Mouse Over`);
   }
 
   @HostListener('click')
   onClick() {
-    this.trackIntereaction('Click');
+    this.trackIntereaction($localize`Click`);
   }
 
   private trackIntereaction(action: string) {

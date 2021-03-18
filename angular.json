@@ -12,6 +12,11 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "ab",
+      "i18n": {
+        "locales": {
+          "es": "src/i18n/messages.es.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -61,6 +66,12 @@
               ],
               "serviceWorker": true,
               "ngswConfigPath": "ngsw-config.json"
+            },
+            "es": {
+              "baseHref": "/",
+              "localize": [
+                "es"
+              ]
             }
           }
         },
@@ -72,6 +83,9 @@
           "configurations": {
             "production": {
               "browserTarget": "angular-intro-vitae-enxenio:build:production"
+            },
+            "es": {
+              "browserTarget": "angular-intro-vitae-enxenio:build:es"
             }
           }
         },

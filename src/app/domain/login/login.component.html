@@ -1,4 +1,5 @@
 <form>
-  <input name="email" placeholder="Your email address" type="email" [(ngModel)]="email">
-  <button (click)="onSend()">Send </button>
+  <input name="email" placeholder="Your email address" i18n-placeholder type="email"
+         [(ngModel)]="email">
+  <button (click)="onSend()" i18n="@@sendCredentials">Send </button>
 </form>
